@@ -1,2 +1,2 @@
 # RandomLunch
- kosta294기 랜밥 시뮬레이터
+- KOSTA 294기 랜밥 시뮬레이터
