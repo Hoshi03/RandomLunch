@@ -1,21 +1,20 @@
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
+        String list = "차경준\n" + "이재희\n" + "이제무\n" + "백인권\n" + "최성관\n" + "차관호\n" +
+                "이찬호\n" + "최영범\n" + "장연식\n" + "김효민\n" + "김진아\n" + "김수민\n" + "장승희\n" +
+                "홍윤기\n" + "박형진\n" + "이지수\n" + "이효경\n" + "백종현\n" + "조정하\n";
+        String[] split = list.split("\n");
         System.out.println("==============================================================");
         System.out.println("=========================랜밥 시뮬레이터!========================");
         Scanner in = new Scanner(System.in);
 
         String filePath = "list.txt";
         ArrayList<String> readNames = (ArrayList<String>) readFromFile(filePath);
-//        System.out.println("파일에서 읽은 이름들:");
-//        for (String name : readNames) System.out.println(name);
-
+        if (readNames.isEmpty()) readNames = new ArrayList<>(Arrays.asList(split));
 
         while (true){
             System.out.println("==============================================================");
@@ -50,7 +49,7 @@ public class Main {
                     String s = in.nextLine();
                     if (s.equals("r") || s.equals("R")) break;
                     else {
-                        writeToFile(filePath,readNames);
+//                        writeToFile(filePath,readNames);
                         System.exit(0);
                     }
                 }
@@ -71,7 +70,7 @@ public class Main {
                 Collections.shuffle(readNames);
             }
             else if (num == 4){
-                writeToFile(filePath,readNames);
+//                writeToFile(filePath,readNames);
                 System.exit(0);
             }
         }
